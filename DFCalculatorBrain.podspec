@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DFCalculatorBrain"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Helps you to create a simple caculator."
 
   # This description is used to generate tags and improve search results.
@@ -95,7 +95,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Calculator/CalculatorBrain/**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "Calculator/CalculatorBrain/DFCalculatorBrain.h", "Calculator/CalculatorBrain/DFCalculatorNumberFormatter.h"
+#s.public_header_files = "Calculator/CalculatorBrain/DFCalculatorBrain.h", "Calculator/CalculatorBrain/DFCalculatorNumberFormatter.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
