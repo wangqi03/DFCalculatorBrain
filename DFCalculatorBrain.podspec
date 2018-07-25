@@ -95,7 +95,7 @@ Pod::Spec.new do |s|
   s.source_files  = "Calculator/CalculatorBrain/**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
-  s.public_header_files = "Calculator/CalculatorBrain/DFCalculatorBrain.{h,m}" "Calculator/CalculatorBrain/DFCalculatorNumberFormatter.{h,m}"
+  s.public_header_files = "Calculator/CalculatorBrain/DFCalculatorBrain.h", "Calculator/CalculatorBrain/DFCalculatorNumberFormatter.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
