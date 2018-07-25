@@ -24,13 +24,13 @@ typedef void (^DFCalculatorBrainUpdatingDisplayBlock)(NSArray<NSString*>*);
 
 //configuration
 @property (nonatomic) BOOL isCurrency; //default NO
-@property (nonatomic) NSInteger precision; //default 6
+@property (nonatomic) NSInteger precision; //default 6. ignored when isCurrency = YES
 @property (nonatomic) NSInteger numberLengthLimit; //default 9
-@property (nonatomic,strong) DFCalculatorNumberFormatter* formatter; //see class for detail
+@property (nonatomic,strong) DFCalculatorNumberFormatter* formatter; //for displaying. you can subclass it. see class for detail
 - (void)setDefaultValue:(NSDecimalNumber*)value;
 - (void)clearInput;
 
-//actions
+//actions. return NO when input is invalid. you can blink your display when returning NO
 - (BOOL)clickedDigit:(NSString*)digit;
 - (BOOL)clickedOperator:(DFCalculatorOperator*)calculatorOperator;
 - (BOOL)clickedDot;
@@ -42,8 +42,7 @@ typedef void (^DFCalculatorBrainUpdatingDisplayBlock)(NSArray<NSString*>*);
 @property (nonatomic,copy) NSArray* calculatorStack;//will update whenever clicked. kvo supported
 + (NSDecimalNumber*)getResultFromStack:(NSArray<NSString*>*)stack;
 
-//listening, with formated result from formatter
+//listening, with formated result from DFCalculatorNumberFormatter
 - (void)listenToStackDisplayChangeWithBlock:(DFCalculatorBrainUpdatingDisplayBlock)block;
-- (void)stopListening;
 
 @end

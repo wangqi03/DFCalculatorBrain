@@ -93,6 +93,7 @@
     
     //ui
     [self refreshDisplay];
+    
     return YES;
 }
 
@@ -216,7 +217,11 @@
         //in case appending number to a "float"
         if ([lastNumber rangeOfString:@"."].length) {
             //ignore number if reaches minimum precision
-            if (lastNumber.length-[lastNumber rangeOfString:@"."].location>2) {
+            if (self.isCurrency) {
+                if (lastNumber.length-[lastNumber rangeOfString:@"."].location>2) {
+                    return NO;
+                }
+            } else if (lastNumber.length-[lastNumber rangeOfString:@"."].location>self.precision) {
                 return NO;
             }
         }
@@ -292,8 +297,11 @@
 
 #pragma mark - kvo
 - (void)listenToStackDisplayChangeWithBlock:(DFCalculatorBrainUpdatingDisplayBlock)block {
-    self.updatingBlock = block;
-    [self addObserver:self forKeyPath:@"calculatorStack" options:NSKeyValueObservingOptionNew context:nil];
+    [self stopListening];
+    if (block) {
+        self.updatingBlock = block;
+        [self addObserver:self forKeyPath:@"calculatorStack" options:NSKeyValueObservingOptionNew context:nil];
+    }
 }
 
 - (void)stopListening {
