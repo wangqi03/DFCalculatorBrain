@@ -7,23 +7,54 @@
 //
 
 #import "ViewController.h"
+#import "DFCalculatorBrain.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+@property (nonatomic,strong) DFCalculatorBrain* calculatorBrain;
 @end
 
 @implementation ViewController
 
+#pragma mark -
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.calculatorBrain = [[DFCalculatorBrain alloc] init];
+    [self.calculatorBrain listenToStackDisplayChangeWithBlock:^(NSArray<NSString *> *display) {
+        self.displayLabel.text = [display componentsJoinedByString:@" "];
+    }];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark -
+- (IBAction)clickedNumber:(UIButton *)sender {
+    [self.calculatorBrain clickedDigit:[sender titleForState:UIControlStateNormal]];
 }
+- (IBAction)clickedDot:(id)sender {
+    [self.calculatorBrain clickedDot];
+}
+
+#pragma mark -
+- (IBAction)clickedPlus:(id)sender {
+    [self.calculatorBrain clickedOperator:DFCalculatorOperatorPlus];
+}
+
+- (IBAction)clickedMinus:(id)sender {
+    [self.calculatorBrain clickedOperator:DFCalculatorOperatorMinus];
+}
+
+- (IBAction)clickedMultiply:(id)sender {
+    [self.calculatorBrain clickedOperator:DFCalculatorOperatorMultiply];
+}
+
+- (IBAction)clickedDivide:(id)sender {
+    [self.calculatorBrain clickedOperator:DFCalculatorOperatorDivide];
+}
+
+#pragma mark -
+- (IBAction)clickedEqual:(id)sender {
+    [self.calculatorBrain getResult];
+}
+
 
 
 @end

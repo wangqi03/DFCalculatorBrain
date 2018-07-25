@@ -13,6 +13,11 @@
 		AA9A8A692108581A00651711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA9A8A682108581A00651711 /* Assets.xcassets */; };
 		AA9A8A6C2108581A00651711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA9A8A6A2108581A00651711 /* LaunchScreen.storyboard */; };
 		AA9A8A6F2108581A00651711 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A8A6E2108581A00651711 /* main.m */; };
+		AA9A8A80210858AC00651711 /* DFCalculatorNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A8A76210858AB00651711 /* DFCalculatorNumberFormatter.m */; };
+		AA9A8A81210858AC00651711 /* NSDecimalNumber+DFCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A8A77210858AB00651711 /* NSDecimalNumber+DFCalculator.m */; };
+		AA9A8A82210858AC00651711 /* NSString+DFCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A8A78210858AB00651711 /* NSString+DFCalculator.m */; };
+		AA9A8A83210858AC00651711 /* NSMutableArray+DFCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A8A79210858AB00651711 /* NSMutableArray+DFCalculator.m */; };
+		AA9A8A84210858AC00651711 /* DFCalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9A8A7B210858AB00651711 /* DFCalculatorBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,16 @@
 		AA9A8A6B2108581A00651711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA9A8A6D2108581A00651711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA9A8A6E2108581A00651711 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AA9A8A76210858AB00651711 /* DFCalculatorNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCalculatorNumberFormatter.m; sourceTree = "<group>"; };
+		AA9A8A77210858AB00651711 /* NSDecimalNumber+DFCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+DFCalculator.m"; sourceTree = "<group>"; };
+		AA9A8A78210858AB00651711 /* NSString+DFCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DFCalculator.m"; sourceTree = "<group>"; };
+		AA9A8A79210858AB00651711 /* NSMutableArray+DFCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+DFCalculator.m"; sourceTree = "<group>"; };
+		AA9A8A7A210858AB00651711 /* NSMutableArray+DFCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+DFCalculator.h"; sourceTree = "<group>"; };
+		AA9A8A7B210858AB00651711 /* DFCalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFCalculatorBrain.m; sourceTree = "<group>"; };
+		AA9A8A7C210858AB00651711 /* NSDecimalNumber+DFCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+DFCalculator.h"; sourceTree = "<group>"; };
+		AA9A8A7D210858AB00651711 /* DFCalculatorNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFCalculatorNumberFormatter.h; sourceTree = "<group>"; };
+		AA9A8A7E210858AB00651711 /* DFCalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFCalculatorBrain.h; sourceTree = "<group>"; };
+		AA9A8A7F210858AC00651711 /* NSString+DFCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DFCalculator.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,7 @@
 		AA9A8A5E2108581700651711 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				AA9A8A752108586200651711 /* CalculatorBrain */,
 				AA9A8A5F2108581700651711 /* AppDelegate.h */,
 				AA9A8A602108581700651711 /* AppDelegate.m */,
 				AA9A8A622108581700651711 /* ViewController.h */,
@@ -69,6 +85,23 @@
 				AA9A8A6E2108581A00651711 /* main.m */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		AA9A8A752108586200651711 /* CalculatorBrain */ = {
+			isa = PBXGroup;
+			children = (
+				AA9A8A7E210858AB00651711 /* DFCalculatorBrain.h */,
+				AA9A8A7B210858AB00651711 /* DFCalculatorBrain.m */,
+				AA9A8A7D210858AB00651711 /* DFCalculatorNumberFormatter.h */,
+				AA9A8A76210858AB00651711 /* DFCalculatorNumberFormatter.m */,
+				AA9A8A7C210858AB00651711 /* NSDecimalNumber+DFCalculator.h */,
+				AA9A8A77210858AB00651711 /* NSDecimalNumber+DFCalculator.m */,
+				AA9A8A7A210858AB00651711 /* NSMutableArray+DFCalculator.h */,
+				AA9A8A79210858AB00651711 /* NSMutableArray+DFCalculator.m */,
+				AA9A8A7F210858AC00651711 /* NSString+DFCalculator.h */,
+				AA9A8A78210858AB00651711 /* NSString+DFCalculator.m */,
+			);
+			path = CalculatorBrain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +174,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9A8A81210858AC00651711 /* NSDecimalNumber+DFCalculator.m in Sources */,
 				AA9A8A642108581700651711 /* ViewController.m in Sources */,
+				AA9A8A80210858AC00651711 /* DFCalculatorNumberFormatter.m in Sources */,
 				AA9A8A6F2108581A00651711 /* main.m in Sources */,
 				AA9A8A612108581700651711 /* AppDelegate.m in Sources */,
+				AA9A8A82210858AC00651711 /* NSString+DFCalculator.m in Sources */,
+				AA9A8A84210858AC00651711 /* DFCalculatorBrain.m in Sources */,
+				AA9A8A83210858AC00651711 /* NSMutableArray+DFCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +328,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wang.calculatorDemo.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang.calculatorDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,7 +345,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wang.calculatorDemo.Calculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wang.calculatorDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
