@@ -25,4 +25,12 @@
     return op;
 }
 
+- (NSString*)floatDotString {
+    if (!_floatDotString) {
+        NSString* onePointOne = [NSNumberFormatter localizedStringFromNumber:[NSNumber numberWithDouble:1.1] numberStyle:NSNumberFormatterDecimalStyle];
+        _floatDotString = [onePointOne stringByReplacingOccurrencesOfString:@"1" withString:@""];
+    }
+    return _floatDotString;
+}
+
 @end

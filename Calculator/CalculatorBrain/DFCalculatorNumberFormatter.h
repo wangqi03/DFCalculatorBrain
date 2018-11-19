@@ -12,5 +12,6 @@
 //you can override this. isEditing indicates whether the user is still typing the number
 - (NSString*)formattedNumberFromNumberString:(NSString*)string isEditing:(BOOL)isEditing;
 - (NSString*)displayStringFromOperator:(DFCalculatorOperator*)op;
+@property (nonatomic,strong) NSString* floatDotString;
 
 @end
